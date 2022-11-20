@@ -5,6 +5,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class WordCounter {
 	public String urlStr;
@@ -15,76 +27,46 @@ public class WordCounter {
     }
 
     private String fetchContent() throws IOException{
-		System.out.println("這是"+urlStr);
-		URL url = new URL(this.urlStr.substring(7));
+		int count = 0;
+		//5System.out.println("這是"+urlStr);
+		URL url = new URL(this.urlStr);
 		URLConnection conn = url.openConnection();
+		conn.setRequestProperty("User-agent", "Chrome/7.0.517.44");
+		System.out.println("connection");
+		try{
 		InputStream in = conn.getInputStream();
+		System.out.println("Stream");
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 	
 		String retVal = "";
 	
 		String line = null;
 		
-		while ((line = br.readLine()) != null){
+		while ((line = br.readLine()) != null && count < 20){
+			count++;
 		    retVal = retVal + line + "\n";
 		}
-	
+		System.out.println("finish content fetch");
 		return retVal;
-    }
-    
-    public int BoyerMoore(String T, String P){
-        int i = P.length() -1;
-        int j = P.length() -1;
-        char [] Tarray = new char[T.length()];
-        char [] Parray = new char[P.length()];
-    	while(i <= T.length()-1) {
-    		if(Tarray[i] == Parray[j]) {
-    			if(j == 0) return i;
-    			i--; 
-    			j--;
-    		}else {
-    			int l = last(Parray[j],P);
-    			i = i + P.length() - Math.min(j, l + 1);
-    			j = P.length() - 1;
-    			
-    		}
-    	}
-        // Bonus: Implement Boyer-Moore Algorithm     
-        return -1;
-    }
-
-    public int last(char c, String P){
-    	// Bonus: Implement last occurence function
-    	/*
-    	char[] Carray = P.toCharArray(); 
-    	int cout = -1;
-    	for(int i = 0; i < Carray.length; i++){    	
-    		if(Carray[i] == c) cout++;
-    	}
-    	if(cout != -1) {
-    		return cout;
-    	}
-    	*/
-        return -1;
-    }
-
-    public int min(int a, int b){
-        if (a < b)
-            return a;
-        else if (b < a)
-            return b;
-        else 
-            return a;
+	}catch(IOException e){
+		
+	}
+	return "";
     }
     
     public int countKeyword(String keyword) throws IOException{
 		if (content == null){
 		    content = fetchContent();
+			if(content.length() >10000){
+				content = content.substring(0, 10000);
+			}
 		}
+
+		//if(content == "0") return 0;
 		
 		//To do a case-insensitive search, we turn the whole content and keyword into upper-case:
-		content = content.toUpperCase();
-		keyword = keyword.toUpperCase();
+	//	content = content.toUpperCase();
+		//keyword = keyword.toUpperCase();
 	
 		int retVal = 0; 
 
@@ -95,7 +77,7 @@ public class WordCounter {
 			content = content.substring(content.indexOf(keyword) + keyword.length() -1);
 			retVal++;
 		}
-		
+		System.out.println("count keyword finish");
 		return retVal;
     }
 }

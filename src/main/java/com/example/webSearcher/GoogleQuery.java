@@ -1,28 +1,17 @@
 package com.example.webSearcher;
 
 import java.io.BufferedReader;
-
 import java.io.IOException;
-
 import java.io.InputStream;
-
 import java.io.InputStreamReader;
-
+import java.net.HttpURLConnection;
 import java.net.URL;
-
 import java.net.URLConnection;
-
 import java.util.HashMap;
-
 import org.jsoup.Jsoup;
-
 import org.jsoup.nodes.Document;
-
 import org.jsoup.nodes.Element;
-
 import org.jsoup.select.Elements;
-
-
 
 public class GoogleQuery 
 
@@ -40,52 +29,40 @@ public class GoogleQuery
 
 		this.searchKeyword = searchKeyword;
 
-		this.url = "http://www.google.com/search?q="+searchKeyword+"蠟筆小新"+"&oe=utf8&num=40";
+		this.url = "http://www.google.com/search?q="+searchKeyword+"拉麵"+"&oe=utf8&num=15";
 
 	}
 
 	
 
-	private String fetchContent() throws IOException
-
-	{
+	private String fetchContent() throws IOException{
+		//HttpURLConnection urlConnection = null;
 		String retVal = "";
-
 		URL u = new URL(url);
-
-		URLConnection conn = u.openConnection();
-
+		HttpURLConnection conn = (HttpURLConnection) u.openConnection();
 		conn.setRequestProperty("User-agent", "Chrome/7.0.517.44");
-
-		InputStream in = conn.getInputStream();
-
-		InputStreamReader inReader = new InputStreamReader(in,"utf-8");
-
-		BufferedReader bufReader = new BufferedReader(inReader);
-		String line = null;
-
-		while((line=bufReader.readLine())!=null)
-		{
-			retVal += line;
-
+		int status = conn.getResponseCode();
+		if(status != HttpURLConnection.HTTP_OK){
+			//System.out.println("page 404 and cannot fetch content");
+			return "0";
+		}else{
+			InputStream in = conn.getInputStream();
+			InputStreamReader inReader = new InputStreamReader(in,"utf-8");
+			BufferedReader bufReader = new BufferedReader(inReader);
+			String line = null;
+			while((line=bufReader.readLine())!=null){
+				retVal += line;
+			}
+			return retVal;
 		}
-		return retVal;
+		
 	}
 
-	public HashMap<String, String> query() throws IOException
-
-	{
-
-		if(content==null)
-
-		{
-
+	public HashMap<String, String> query() throws IOException{
+		if(content==null){
 			content= fetchContent();
-
 		}
-
 		HashMap<String, String> retVal = new HashMap<String, String>();
-		
 		Document doc = Jsoup.parse(content);
 //		System.out.println(doc.text());
 		Elements lis = doc.select("div");
@@ -104,6 +81,15 @@ public class GoogleQuery
 				if(title.equals("")) {
 					continue;
 				}
+				if(citeUrl.contains("&")) 
+					{
+						citeUrl = citeUrl.substring(7, citeUrl.indexOf("&"));
+					}
+					else if(citeUrl.contains("%")) 
+					{
+						citeUrl = citeUrl.substring(7, citeUrl.indexOf("%"));
+					}
+					
 				System.out.println(title + ","+citeUrl);
 				retVal.put(title, citeUrl);
 
