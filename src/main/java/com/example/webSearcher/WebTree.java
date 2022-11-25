@@ -1,10 +1,6 @@
 package com.example.webSearcher;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.swing.text.StyledEditorKit.ForegroundAction;
-import com.example.webSearcher.*;
 
 public class WebTree {
 	private KeywordList keys;
@@ -25,13 +21,9 @@ public class WebTree {
 	
 
 	public void setPostOrderScore(WebNode startNode) throws IOException{
-	
-		//1. compute the score of children nodes postorder
 		for(WebNode child : startNode.children){
-			setPostOrderScore(child);
-			
+			setPostOrderScore(child);	
 		}
-		//**setNode score of startNode
 			startNode.setNodeScore(keys);
 		}
 }
