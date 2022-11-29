@@ -7,7 +7,7 @@ You are now in the master branch which is for web app made under spring boot fra
 Switch to branch, android, to see the code of android app made with android studio
 [2022.11.29]
 1. front-end design is start
-![image](https://github.com/RexRed6802/DataStructure_Team10/blob/master/img/截圖 2022-11-29 下午12.24.55.png)
+![image](https://github.com/RexRed6802/DataStructure_Team10/blob/master/img/截圖%202022-11-29%20下午12.24.55.png)
 
 [2022.11.26]
 1. Implement multithreading in our project and indeed speed up the crawling time.(just 10 seconds to build and search 40 web trees)
