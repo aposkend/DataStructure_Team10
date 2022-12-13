@@ -37,7 +37,8 @@ public class WordCounter implements Runnable{
 		URL url = new URL(this.urlStr);
 		URLConnection conn = url.openConnection();
 		conn.setRequestProperty("User-agent", "Chrome/7.0.517.44");
-		//conn.setReadTimeout(2000);
+		conn.setReadTimeout(10000);
+		conn.setConnectTimeout(10000);
 		System.out.println("connection");
 		try{
 		InputStream in = conn.getInputStream();

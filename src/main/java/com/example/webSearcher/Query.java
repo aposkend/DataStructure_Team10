@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -28,7 +29,9 @@ public class Query {
 		URL u = new URL(url);
 		HttpURLConnection conn = (HttpURLConnection) u.openConnection();
 		conn.setRequestProperty("User-agent", "Chrome/7.0.517.44");
-		//conn.setReadTimeout(2000);
+		conn.setReadTimeout(5000);
+		conn.setConnectTimeout(5000);
+	try{
 		int status = conn.getResponseCode();
 		if(status != HttpURLConnection.HTTP_OK){
 			System.out.println("page 404 and cannot fetch content");
@@ -43,6 +46,10 @@ public class Query {
 			}
 			return retVal;
 		}
+	}catch(SocketTimeoutException e){
+			System.out.println("Connection is timeout");
+		}	
+		return retVal;
 		
 	}
 

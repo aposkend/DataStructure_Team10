@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,9 +20,11 @@ public class GoogleQuery {
 	public String searchKeyword;
 	public String url;
 	public String content;
+	public ArrayList<String> relatedSearches = new ArrayList<String>();
+
 	public GoogleQuery(String searchKeyword){
 		this.searchKeyword = searchKeyword;
-		this.url = "http://www.google.com/search?q="+searchKeyword+"拉麵"+"台北"+"&oe=utf8&num=40";
+		this.url = "http://www.google.com/search?q="+searchKeyword+"拉麵"+"台北"+"&oe=utf8&num=5";
 	}
 
 	
@@ -54,6 +59,7 @@ public class GoogleQuery {
 		Document doc = Jsoup.parse(content);
 		Elements lis = doc.select("div");
 		lis = lis.select(".kCrYT");
+		relatedSearch();
 		for(Element li : lis){
 			try {
 				String citeUrl = li.select("a").get(0).attr("href");
@@ -70,11 +76,30 @@ public class GoogleQuery {
 				}		
 				System.out.println(title + ","+citeUrl);
 				if(citeUrl.startsWith("https://tw.tech.yahoo.com/news")) continue;
+				citeUrl = URLDecoder.decode(citeUrl, "UTF-8");
 				retVal.put(title, citeUrl);
 			} catch (IndexOutOfBoundsException e) {
 				System.out.println("index out of bounds when crawling");
 			}
 		}
 		return retVal;
+	}
+
+	public void relatedSearch(){
+		if(content==null){
+			try {
+				content= fetchContent();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		Document doc = Jsoup.parse(content);
+		Elements lis = doc.select("div");
+		String yeah = lis.get(0).attr("y6Uyqe");
+		//for(Element li : yeah){
+		//	this.relatedSearches.add("");
+		//	System.out.println(li.text());
+		//}
 	}
 }
