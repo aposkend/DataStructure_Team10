@@ -5,6 +5,12 @@ This is a project for Data Structure course.
 You are now in the master branch which is for web app made under spring boot framework.
 
 Switch to branch, android, to see the code of android app made with android studio
+
+[2022.12.16]
+1. finish finding relative words
+2. finish front-end design
+3. The project is done.... maybe
+
 [2022.11.29]
 1. front-end design is start
 ![image](https://github.com/RexRed6802/DataStructure_Team10/blob/master/img/截圖%202022-11-29%20下午12.24.55.png)
