@@ -1,5 +1,9 @@
 # DataStructure_Team10
 
+App（因檔案太大），請由此下載
+App程式碼：https://drive.google.com/file/d/1FBI7snaNGGzOWz_fjYCykEhlOjnznVxd/view?usp=sharing
+Apk檔案：https://github.com/RexRed6802/RamenSearcher/releases/download/1.0.0/app-debug.apk
+
 This is a project for Data Structure course.
 
 [2022.12.16]
