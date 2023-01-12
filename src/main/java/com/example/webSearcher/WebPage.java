@@ -32,7 +32,7 @@ public class WebPage implements Runnable{
 	
 	public boolean setScore() throws IOException{
 		ArrayList<Keyword> k = new ArrayList<Keyword>();
-		k.add(new Keyword("拉麵",500));
+		k.add(new Keyword("拉麵",700));
         k.add(new Keyword("豚骨",300));
         k.add(new Keyword("叉燒",300));
         k.add(new Keyword("雞白湯",200));
@@ -50,35 +50,6 @@ public class WebPage implements Runnable{
 			score += key.weight*counter.countKeyword(key.name);	
 		}
 		
-	//	k.add(new Keyword("湯", 5));
-	//	k.add(new Keyword("麵", 5));
-	/* 
-		for(int i = 0; i < k.size(); i++){		
-			//score += key.weight*counter.countKeyword(key.name);	
-			WordCounter wc = new WordCounter(url, k.get(i).name);
-			Thread counterthread = new Thread(wc);
-			threadList.add(counterthread);
-			wcList.add(wc);
-		}
-		
-		for(Thread element : threadList){
-			element.start();
-		}
-
-		for(Thread element : threadList){
-			try {
-				element.join();
-
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		for(WordCounter wc : wcList){
-			score += wc.getScore();
-		}
-*/
 		System.out.println("finishing set score");
 		return true;
 	}

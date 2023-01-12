@@ -48,7 +48,7 @@ public class WordCounter implements Runnable{
 	
 		String line = null;
 		
-		while ((line = br.readLine()) != null && count < 500){
+		while ((line = br.readLine()) != null && count <= 10000){
 			count++;
 		    retVal = retVal + line + "\n";
 		}
@@ -66,8 +66,8 @@ public class WordCounter implements Runnable{
 	public int countKeyword(String keyword) throws IOException{
 		if (content == null){
 		    content = fetchContent();
-			if(content.length() >10000){
-				content = content.substring(0, 10000);
+			if(content.length() >30000){
+				content = content.substring(0, 30000);
 			}
 		}
 	

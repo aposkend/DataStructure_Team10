@@ -59,7 +59,6 @@ public class GoogleQuery {
 		Document doc = Jsoup.parse(content);
 		Elements lis = doc.select("div");
 		lis = lis.select(".kCrYT");
-		relatedSearch();
 		for(Element li : lis){
 			try {
 				String citeUrl = li.select("a").get(0).attr("href");
@@ -80,26 +79,10 @@ public class GoogleQuery {
 				retVal.put(title, citeUrl);
 			} catch (IndexOutOfBoundsException e) {
 				System.out.println("index out of bounds when crawling");
+				//e.printStackTrace();
 			}
 		}
 		return retVal;
 	}
 
-	public void relatedSearch(){
-		if(content==null){
-			try {
-				content= fetchContent();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		Document doc = Jsoup.parse(content);
-		Elements lis = doc.select("div");
-		String yeah = lis.get(0).attr("y6Uyqe");
-		//for(Element li : yeah){
-		//	this.relatedSearches.add("");
-		//	System.out.println(li.text());
-		//}
-	}
 }

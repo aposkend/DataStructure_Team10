@@ -10,7 +10,6 @@ public class Keyword {
 		this.weight = weight;
 	}
 	
-	@Override
 	public String toString(){
 		return "["+name+","+weight+"]";
 	}

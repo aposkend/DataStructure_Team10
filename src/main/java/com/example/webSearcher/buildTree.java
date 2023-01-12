@@ -9,10 +9,10 @@ public class buildTree implements Runnable{
     private String web; 
     private KeywordList keys = new KeywordList();
     private WebTree resultList;
- //   private ArrayList<Thread> threads = new ArrayList<Thread>();
 
     public buildTree(String websites, String web){
             this.websites = websites;
+            this.web = web;
     }
     
     public void run(){
@@ -20,9 +20,7 @@ public class buildTree implements Runnable{
             var pageThread = new Thread(p);
             pageThread.start();
             WebTree t = new WebTree(p);
-            //Query
             System.out.println("first Layer: "+websites);
-
             HashMap <String,String>websites2 = doQuery(websites);
             if(websites2 != null){
                 for(String url2: websites2.keySet()){
@@ -30,22 +28,17 @@ public class buildTree implements Runnable{
                     WebPage p2 = new WebPage(url2, websites2.get(url2));
                     var p2Thread = new Thread(p2);
                     p2Thread.start();
-
                     System.out.println("Second Layer: "+ url2);
                     WebNode node2 = new WebNode(p2);
                     t.root.addChild(node2);
                 }
-            }
-
-            //Score
-              try {
+            } try {
                 t.setPostOrderScore(this.keys);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-              resultList = t;
-        
+            resultList = t;
             System.out.println("next round");
     }
 
