@@ -1,5 +1,7 @@
 # DataStructure_Team10
 
+Demo影片: https://drive.google.com/drive/folders/1UDL15Iw0EItJe62iR7Oeu_1-OkCYleUk?usp=sharing
+
 App（因檔案太大），請由此下載
 
 App程式碼：https://drive.google.com/file/d/1FBI7snaNGGzOWz_fjYCykEhlOjnznVxd/view?usp=sharing
