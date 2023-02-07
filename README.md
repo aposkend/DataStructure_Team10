@@ -1,5 +1,7 @@
 # DataStructure_Team10
 
+Introduction: https://www.canva.com/design/DAFU1_E73BU/MJ-yX7awmpWVvnYS5pPeKQ/view?utm_content=DAFU1_E73BU&utm_campaign=designshare&utm_medium=link&utm_source=viewer
+
 Demo影片: https://drive.google.com/drive/folders/1UDL15Iw0EItJe62iR7Oeu_1-OkCYleUk?usp=sharing
 
 App（因檔案太大），請由此下載
