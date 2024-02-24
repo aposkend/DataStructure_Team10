@@ -49,7 +49,7 @@ c. By the way, when we call setScore function in every webpages, we will create 
 d. When finishing creating every tree in resultList. we can use the selectionSort function to sort them. <br/>
 e. Publish our result to front-end (user) <br/>
 f. Unified Modeling Language(UML) <br/>
-
+![alt text](https://github.com/aposkend/DataStructure_Team10)
 
 
 
