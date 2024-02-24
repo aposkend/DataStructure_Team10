@@ -1,40 +1,38 @@
 # DataStructure_Team10
 
 ## introduction - Motivation: <br />
-a. Topic: The Best Search Engine for RAMEN Lovers
-b. Motivation: Recently, collecting different kinds of Ramen has become a
-trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we wants to make a search engine for those RAMEN mania to get the rapidly and accurately RAMEN restaurants with high quality.
+a. Topic: The Best Search Engine for RAMEN Lovers <br/ >
+b. Motivation: Recently, collecting different kinds of Ramen has become a trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we wants to make a search engine for those RAMEN mania to get the rapidly and accurately RAMEN restaurants with high quality. <br/>
 
 
 ## Searching Methodology <br />
 
 a. Keywords:
   
-KEYWORD | WEIGHT
-----------------
-  拉麵   |   500
-  豚骨   |   300
-  叉燒   |   300
-  雞白湯 |   200
-  醬油   |   200
-  台北   |   200
-  排隊   |    50
-  好吃   |    30
-  湯底   |    30
-  激辛   |    30
-  日本   |    30
-  日式   |    30
-  美食   |    30
-  湯     |     5
-  麵     |     5
+KEYWORD | WEIGHT <br/>
+  拉麵   |   500 <br/>
+  豚骨   |   300 <br/>
+  叉燒   |   300 <br/>
+  雞白湯 |   200 <br/>
+  醬油   |   200 <br/>
+  台北   |   200 <br/>
+  排隊   |    50 <br/>
+  好吃   |    30 <br/>
+  湯底   |    30<br/> 
+  激辛   |    30<br/> 
+  日本   |    30<br/>
+  日式   |    30<br/>
+  美食   |    30<br/>
+  湯     |     5<br/>
+  麵     |     5<br/>
   
-b. Compulsory keyword:
+b. Compulsory keyword:<br/>
   When user search, and in googleQuery class , we will mandatorily and automatically add keyword like “拉麵” and “台北” to make the result more accurately.
-c. The websites can be ranked:
+c. The websites can be ranked:<br/>
   i. https://ramenroamer.com/
   ii. https://www.ramenexplorer.com/
   iii. https://trade.1111.com.tw/web/%E6%8B%89%E9%BA%B5/
-d. Formula:
+d. Formula:<br/>
   Score = count x weight
 
 
