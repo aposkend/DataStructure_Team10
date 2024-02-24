@@ -1,5 +1,17 @@
 # DataStructure_Team10
 
+##專案詳細細節請看：https://drive.google.com/file/d/1OVvI4Vpc30X35unP8qoOSD_SC-us-BMD/view?usp=sharing <br />
+
+Presentation Slides: https://www.canva.com/design/DAFU1_E73BU/MJ-yX7awmpWVvnYS5pPeKQ/view?utm_content=DAFU1_E73BU&utm_campaign=designshare&utm_medium=link&utm_source=viewer
+
+Demo Video: https://drive.google.com/drive/folders/1UDL15Iw0EItJe62iR7Oeu_1-OkCYleUk?usp=sharing
+
+App（因檔案太大），請由此下載
+App程式碼：https://drive.google.com/file/d/1FBI7snaNGGzOWz_fjYCykEhlOjnznVxd/view?usp=sharing
+Apk檔案：https://github.com/RexRed6802/RamenSearcher/releases/download/1.0.0/app-debug.apk
+
+以下內容皆節錄自上述連結
+
 ## introduction - Motivation: <br />
 a. Topic: The Best Search Engine for RAMEN Lovers <br />
 b. Motivation: Recently, collecting different kinds of Ramen has become a trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we wants to make a search engine for those RAMEN mania to get the rapidly and accurately RAMEN restaurants with high quality. <br />
@@ -63,15 +75,7 @@ f. Unified Modeling Language(UML) <br/>
 
 
 
-Introduction: https://www.canva.com/design/DAFU1_E73BU/MJ-yX7awmpWVvnYS5pPeKQ/view?utm_content=DAFU1_E73BU&utm_campaign=designshare&utm_medium=link&utm_source=viewer
 
-Demo影片: https://drive.google.com/drive/folders/1UDL15Iw0EItJe62iR7Oeu_1-OkCYleUk?usp=sharing
-
-App（因檔案太大），請由此下載
-
-App程式碼：https://drive.google.com/file/d/1FBI7snaNGGzOWz_fjYCykEhlOjnznVxd/view?usp=sharing
-
-Apk檔案：https://github.com/RexRed6802/RamenSearcher/releases/download/1.0.0/app-debug.apk
 
 This is a project for Data Structure course.
 
