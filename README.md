@@ -28,14 +28,27 @@ KEYWORD | WEIGHT <br/>
   
 b. Compulsory keyword:<br/>
   When user search, and in googleQuery class , we will mandatorily and automatically add keyword like “拉麵” and “台北” to make the result more accurately.<br/>
+  
 c. The websites can be ranked: <br/>
   i. https://ramenroamer.com/ <br/>
   ii. https://www.ramenexplorer.com/<br/>
   iii. https://trade.1111.com.tw/web/%E6%8B%89%E9%BA%B5/<br/>
   ...etc<br/>
+  
 d. Formula:<br/>
   Score = count x weight<br/>
 
+
+## 3. System Search Process and Design:
+a. We start with the main function in the main class. First of all, we call the searchGoogle function with the keys provided by users. The searchGoogle will query Google and return a HashMap including url and website title. <br/>
+   
+b. Second of all, we call the buildTree function to build the tree, setting every url in HashMap as the tree root and store each root in our resultList to make sorting them more convenient soon. For each root node, we set its score by calling each root's node's page’s setScore function. Then we jump into the second loop to get those urls contained in every page and set their score as we did to the root node. In turn, finishing building trees. <br/>
+
+c. By the way, when we call setScore function in every webpages, we will create a wordCounter object to count its score. Then we call setPostOrderScore for every root.<br/>
+
+d. When finishing creating every tree in resultList. we can use the selectionSort function to sort them. <br/>
+e. Publish our result to front-end (user) <br/>
+f. Unified Modeling Language(UML) <br/>
 
 
 
