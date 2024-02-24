@@ -1,8 +1,8 @@
 # DataStructure_Team10
 
 ## introduction - Motivation: <br />
-a. Topic: The Best Search Engine for RAMEN Lovers <br/ >
-b. Motivation: Recently, collecting different kinds of Ramen has become a trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we wants to make a search engine for those RAMEN mania to get the rapidly and accurately RAMEN restaurants with high quality. <br/>
+a. Topic: The Best Search Engine for RAMEN Lovers <br />
+b. Motivation: Recently, collecting different kinds of Ramen has become a trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we wants to make a search engine for those RAMEN mania to get the rapidly and accurately RAMEN restaurants with high quality. <br />
 
 
 ## Searching Methodology <br />
