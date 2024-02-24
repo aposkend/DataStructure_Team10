@@ -1,6 +1,6 @@
 # DataStructure_Team10
 
-##專案詳細細節請看：https://drive.google.com/file/d/1OVvI4Vpc30X35unP8qoOSD_SC-us-BMD/view?usp=sharing <br />
+## 專案詳細細節請看：https://drive.google.com/file/d/1OVvI4Vpc30X35unP8qoOSD_SC-us-BMD/view?usp=sharing <br />
 
 Presentation Slides: https://www.canva.com/design/DAFU1_E73BU/MJ-yX7awmpWVvnYS5pPeKQ/view?utm_content=DAFU1_E73BU&utm_campaign=designshare&utm_medium=link&utm_source=viewer
 
