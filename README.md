@@ -27,13 +27,14 @@ KEYWORD | WEIGHT <br/>
   麵     |     5<br/>
   
 b. Compulsory keyword:<br/>
-  When user search, and in googleQuery class , we will mandatorily and automatically add keyword like “拉麵” and “台北” to make the result more accurately.
-c. The websites can be ranked:<br/>
-  i. https://ramenroamer.com/
-  ii. https://www.ramenexplorer.com/
-  iii. https://trade.1111.com.tw/web/%E6%8B%89%E9%BA%B5/
+  When user search, and in googleQuery class , we will mandatorily and automatically add keyword like “拉麵” and “台北” to make the result more accurately.<br/>
+c. The websites can be ranked: <br/>
+  i. https://ramenroamer.com/ <br/>
+  ii. https://www.ramenexplorer.com/<br/>
+  iii. https://trade.1111.com.tw/web/%E6%8B%89%E9%BA%B5/<br/>
+  ...etc<br/>
 d. Formula:<br/>
-  Score = count x weight
+  Score = count x weight<br/>
 
 
 
