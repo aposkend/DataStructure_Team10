@@ -1,7 +1,7 @@
 # DataStructure_Team10 Ramen Searcher 拉麵搜尋器 （Ramen Search Engine）
 
 ## Introduction
-![alt text](https://github.com/aposkend/DataStructure_Team10/blob/master/charts/Web1.jpeg)
+![alt text](https://github.com/aposkend/DataStructure_Team10/blob/master/charts/Web1.png)
 Topic: The Best Search Engine for RAMEN Lovers <br>
 Motivation: Recently, collecting different kinds of Ramen has become a trend in Taiwan. Those comments left on social media let more and more “novices” get to know this culture. However, we think some information is not accurate at all. Therefore, we want to make a search engine for those RAMEN mania to get RAMEN restaurants rapidly and accurately with high quality.<br>
 
